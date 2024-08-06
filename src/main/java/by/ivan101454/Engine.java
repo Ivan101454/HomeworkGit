@@ -20,6 +20,7 @@ public class Engine {
     public void stopEngine() {
         System.out.println("Двигатель заглушен");
     }
+
     public double getDisplacement() {
         return displacement;
     }

@@ -10,6 +10,10 @@ public class Car {
         this.fuelTank = fuelTank;
     }
 
+    public void fillFuel() {
+        fuelTank.setCurrentAmountFuel(fuelTank.getMaxSize());
+    }
+
     public String getModel() {
         return model;
     }
