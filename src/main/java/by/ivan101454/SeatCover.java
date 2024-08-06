@@ -8,6 +8,12 @@ public class SeatCover {
         this.color = color;
         this.material = material;
     }
+    public void turnOffHeater() {
+        System.out.println("Подогрев выключен");
+    }
+    public void turnOnHeater() {
+        System.out.println("Подогрев включен");
+    }
 
     public String getColor() {
         return color;
