@@ -17,4 +17,11 @@ public class Railing {
     public void setBaggage() {
         System.out.println("Багаж установлен на машину");
     }
+
+    @Override
+    public String toString() {
+        return "Railing{" +
+               "color='" + color + '\'' +
+               '}';
+    }
 }
