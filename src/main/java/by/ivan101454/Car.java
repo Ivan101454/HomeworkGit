@@ -13,6 +13,14 @@ public class Car {
     public void fillFuel() {
         fuelTank.setCurrentAmountFuel(fuelTank.getMaxSize());
     }
+    public String attachNewOption(Object... args) {
+        StringBuilder sb = new StringBuilder();
+        int counter = 1;
+        for (Object s: args) {
+            sb.append(counter++ + " опция: " + s.toString());
+        }
+        return sb.toString();
+    }
 
     public String getModel() {
         return model;
@@ -32,10 +40,14 @@ public class Car {
 
     @Override
     public String toString() {
+        String opnion;
+        if(!attachNewOption().isEmpty()) {
+            opnion = attachNewOption();
+        } else opnion = "доп опций не заказано";
         return "Car{" +
                "model='" + model + '\'' +
                ", engine=" + engine +
                ", fuelTank=" + fuelTank +
-               '}';
+               '}' + opnion;
     }
 }
