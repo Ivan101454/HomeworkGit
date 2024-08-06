@@ -3,9 +3,11 @@ package by.ivan101454;
 public class Car {
     private String model;
     private Engine engine;
-    public Car(String model, Engine engine) {
+    private FuelTank fuelTank;
+    public Car(String model, Engine engine, FuelTank fuelTank) {
         this.model = model;
         this.engine = engine;
+        this.fuelTank = fuelTank;
     }
 
     public String getModel() {
