@@ -25,4 +25,13 @@ public class Car {
     public void setEngine(Engine engine) {
         this.engine = engine;
     }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+               "model='" + model + '\'' +
+               ", engine=" + engine +
+               ", fuelTank=" + fuelTank +
+               '}';
+    }
 }
