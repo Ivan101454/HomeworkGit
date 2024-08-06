@@ -1,5 +1,7 @@
 package by.ivan101454;
 
+import jdk.incubator.vector.VectorOperators;
+
 public class Engine {
     private double displacement;
     private String numberEngine;
@@ -11,6 +13,13 @@ public class Engine {
         this.typeEngine = typeEngine;
     }
 
+    public void startEngine() {
+        System.out.println("Двигатель заведен");
+    }
+
+    public void stopEngine() {
+        System.out.println("Двигатель заглушен");
+    }
     public double getDisplacement() {
         return displacement;
     }
