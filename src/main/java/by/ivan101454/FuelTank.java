@@ -7,6 +7,10 @@ public class FuelTank {
 
    }
 
+    public int getMaxSize() {
+        return maxSize;
+    }
+
     public int getCurrentAmountFuel() {
         return currentAmountFuel;
     }
