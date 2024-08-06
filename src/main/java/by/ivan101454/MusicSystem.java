@@ -36,4 +36,15 @@ public class MusicSystem {
     public void setVolume(int volume) {
         Volume = volume;
     }
+
+    @Override
+    public String toString() {
+        return "MusicSystem{" +
+               "model='" + model + '\'' +
+               ", power=" + power +
+               ", Volume=" + Volume +
+               ", maxVolume=" + maxVolume +
+               ", minVolume=" + minVolume +
+               '}';
+    }
 }
