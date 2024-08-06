@@ -3,9 +3,36 @@ package by.ivan101454;
 public class Car {
     private String model;
     private Engine engine;
-    public Car(String model, Engine engine) {
+    private FuelTank fuelTank;
+
+    public Car(String model, Engine engine, FuelTank fuelTank) {
         this.model = model;
         this.engine = engine;
+        this.fuelTank = fuelTank;
+    }
+
+    public void fillFuel() {
+        fuelTank.setCurrentAmountFuel(fuelTank.getMaxSize());
+    }
+
+    public void go() {
+        engine.startEngine();
+        while (fuelTank.getCurrentAmountFuel() > 0) {
+            System.out.println("машина едет");
+            fuelTank.setCurrentAmountFuel(fuelTank.getCurrentAmountFuel() - 5);
+            System.out.println("Топлива осталось".formatted(fuelTank.getCurrentAmountFuel()));
+        }
+        System.out.println("топливо закончилось");
+        engine.stopEngine();
+    }
+
+    public String attachNewOption(Object... args) {
+        StringBuilder sb = new StringBuilder();
+        int counter = 1;
+        for (Object s : args) {
+            sb.append(counter++ + " опция: " + s.toString());
+        }
+        return sb.toString();
     }
 
     public String getModel() {
@@ -22,5 +49,18 @@ public class Car {
 
     public void setEngine(Engine engine) {
         this.engine = engine;
+    }
+
+    @Override
+    public String toString() {
+        String opnion;
+        if (!attachNewOption().isEmpty()) {
+            opnion = attachNewOption();
+        } else opnion = "доп опций не заказано";
+        return "Car{" +
+               "model='" + model + '\'' +
+               ", engine=" + engine +
+               ", fuelTank=" + fuelTank +
+               '}' + opnion;
     }
 }
